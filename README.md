@@ -21,7 +21,7 @@ a. Create a Custom IAM Policy and Role for a Lambda Function
    Select the JSON tab.
    Delete the existing code and paste in the following:
    
-    {
+{
   "Version": "2012-10-17",
   "Statement": [
     {
