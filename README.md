@@ -21,7 +21,7 @@ a. Create a Custom IAM Policy and Role for a Lambda Function
    Select the JSON tab.
    Delete the existing code and paste in the following:
    
-   #IAM Policy
+   https://github.com/Sharathkumar-dp/AWs_Lambda_ShutDown_EC2_Instance/blob/master/IAM_Policy.json
 
    Click Next: Tags.
    Click Next: Review
@@ -43,8 +43,8 @@ b. Create a Basic Lambda Function
    Scroll down to Code source and double-click lambda_function.py.
    Delete the existing code and paste in the following :
    
-   #Lambda function 
-
+   https://github.com/Sharathkumar-dp/AWs_Lambda_ShutDown_EC2_Instance/blob/master/EC2_Stop_Lambda.py
+   
    Click Deploy.
 
 c. Smaple EC2 instances
