@@ -59,7 +59,7 @@ d. Create a Test event in the Lambda Console
    Click Test and view the execution result.
    Return to the EC2 console.
    On the left menu, click Instances.
-   Under Details, the Instance state should now be shown as Stopped.
+   Under Details, the Instance state should now be shown as Stopped. 
    
    
    **Congratualations**
