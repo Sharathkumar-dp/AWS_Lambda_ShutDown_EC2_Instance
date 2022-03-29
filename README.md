@@ -1,4 +1,4 @@
-# AWs_Lambda_ShutDown_EC2_Instance
+# AWS_Lambda_ShutDown_EC2_Instance
 Creating a Basic Lambda Function to Shut Down an EC2 Instances in all regions
 
 In this section we will create a basic Lambda function to shut down/Stop an EC2 instances. 
