@@ -21,35 +21,15 @@ a. Create a Custom IAM Policy and Role for a Lambda Function
    Select the JSON tab.
    Delete the existing code and paste in the following:
    
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": [
-        "logs:CreateLogGroup",
-        "logs:CreateLogStream",
-        "logs:PutLogEvents"
-      ],
-      "Resource": "arn:aws:logs:*:*:*"
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
-        "ec2:Stop*"
-      ],
-      "Resource": "*"
-    }
-  ]
-}
+   #IAM Policy
 
-Click Next: Tags.
-Click Next: Review.
-In Name, enter "**ec2lambdapolicy**" and click Create policy.
-On the left menu, select Roles > Create role.
-Select Lambda again and click Next: Permissions.
-Select the newly created ec2lambdapolicy and click Next: Tags > Next: Review.
-In Role name, enter "**ec2role**" and click Create role.
+   Click Next: Tags.
+   Click Next: Review
+   In Name, enter "**ec2lambdapolicy**" and click Create policy.
+   On the left menu, select Roles > Create role.
+   Select Lambda again and click Next: Permissions.
+   Select the newly created ec2lambdapolicy and click Next: Tags > Next: Review.
+   In Role name, enter "**ec2role**" and click Create role.
 
 b. Create a Basic Lambda Function
    From the AWS Management Console, navigate to Lambda.
@@ -62,29 +42,10 @@ b. Create a Basic Lambda Function
    Click Create function.
    Scroll down to Code source and double-click lambda_function.py.
    Delete the existing code and paste in the following :
+   
+   #Lambda function 
 
-import boto3
-def lambda_handler(event, context):
-
-	#To get list of regions
-	ec2_client = boto3.client('ec2')
-	regions = [region['RegionName']
-		for region in ec2_client.describe_regions()['Regions']]
-
-	#To iterate over each regions
-	for region in regions:
-		ec2 = boto3.resource('ec2', region_name=region)
-		print("region : ", region)
-		#To get only instances in running state
-		instances - ec2.instances.filter(
-			Filters=[{'Name': 'instance-state-name','Values':[+'running']}])
-		#To to stopr running instances
-		for instance in instances:
-			instance.stop()
-					print('Stopped instance : ',instance.id)
-
-
-Click Deploy.
+   Click Deploy.
 
 c. Smaple EC2 instances
    From the AWS Management Console, navigate to EC2.
